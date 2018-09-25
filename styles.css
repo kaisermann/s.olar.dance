@@ -1,0 +1,296 @@
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.solar-dancer {
+    position: relative;
+    width: 265px;
+    height: 353px;
+}
+.solar-dancer::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    /* background-image: url(./koala.jpg); */
+    background-size: cover;
+    background-position: center;
+}
+.solar-dancer .base {
+    width: 170px;
+    height: 120px;
+    position: absolute;
+    z-index: 0;
+    /* opacity: .8; */
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.solar-dancer .base::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    width: 120px;
+    height: 0;
+    background-color: transparent;
+    border-bottom: 120px solid rgb(21, 124, 119);
+    border-left: 40px solid transparent;
+    border-right: 40px solid transparent;
+    border-bottom-left-radius: 40%;
+    border-bottom-right-radius: 40%;
+}
+
+.solar-dancer .base::after {
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    width: 110px;
+    height: 0;
+    background-color: transparent;
+    border-bottom: 110px solid lightseagreen;
+    border-left: 40px solid transparent;
+    border-right: 40px solid transparent;
+    border-bottom-left-radius: 40%;
+    border-bottom-right-radius: 40%;
+    z-index: 0;
+}
+
+.cells {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 0;
+    border-bottom: 20px solid darkslategray;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    z-index: 1;
+}
+
+.dancer {
+    position: relative;
+    z-index: 2;
+    width: 100px;
+    height: 240px;
+    margin: 0 auto;
+    /* background-color: red; */
+    /* opacity: .95; */
+}
+
+.dancer .head {
+    position: absolute;
+    z-index: 6;
+    bottom: 95px;
+    left: -15px;
+    width: 130px;
+    height: 110px;
+    background-color: rgb(95, 95, 95);
+    border-radius: 50%;
+    transform-origin: 50% 100%;
+    box-shadow: 0 2px rgb(40, 40, 40);
+}
+
+.hair {
+    position: absolute;
+    z-index: 8;
+    top: -10px;
+    left: 50px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 8px 15px 17px;
+    border-color: transparent transparent rgb(80, 80, 80) transparent;
+}
+
+.hair::before,
+.hair::after {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 8;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-color: transparent transparent rgb(80, 80, 80) transparent;
+}
+
+
+.hair::before {
+    right: -20px;
+    border-width: 0 2px 15px 20px;
+    transform: rotateZ(20deg);
+}
+
+.hair::after {
+    left: -20px;
+    top: -5;
+    border-width: 0 20px 20px 2px;
+    transform: rotateZ(-20deg);
+}
+
+.ear.-left,
+.ear.-right {
+    position: absolute;
+    z-index: 4;
+    bottom: 85px;
+    width: 60px;
+    height: 50px;
+    background-color: rgb(128, 128, 128);
+    border-radius: 50px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    transform-origin: 50% 100%;
+    box-shadow: 0px 2px rgb(80, 80, 80);
+}
+
+.ear.-left {
+    right: 60%;
+    transform: rotateZ(-55deg);
+}
+
+.ear.-right {
+    left: 60%;
+    transform: rotateZ(55deg);
+}
+
+.ear::before {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 4;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 6px;
+    width: 30px;
+    height: 25px;
+    background-color: rgb(255, 168, 190);
+    border-radius: 50px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    transform-origin: 50% 100%;
+}
+
+.dancer .body {
+    position: absolute;
+    z-index: 4;
+    height: 220px;
+    width: 100px;
+}
+
+.dancer .arms::before,
+.dancer .arms::after {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 4;
+    bottom: 90px;
+    width: 20px;
+    height: 50px;
+    background-color: rgb(97, 96, 96);
+    border-radius: 15px;
+    transform-origin: 50% 100%;
+}
+
+.dancer .arms::before {
+    right: 70%;
+    transform: rotateZ(-120deg) rotateX(10deg);
+}
+
+.dancer .arms::after {
+    left: 70%;
+    transform: rotateZ(70deg) rotateX(-20deg);
+}
+
+.dancer .torso {
+    position: absolute;
+    z-index: 5;
+    bottom: 30px;
+    left: 5px;
+    width: 88px;
+    height: 80px;
+}
+
+.dancer .torso::before {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0px;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    border-bottom: 30px solid rgb(202, 10, 10);
+    border-radius: 50%;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    background-color: transparent;
+    background-color:  rgb(70, 70, 70);
+}
+
+.dancer .torso::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 33px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #fff;
+    filter: blur(.7px);
+}
+
+
+.dancer .legs::before,
+.dancer .legs::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 5px;
+    height: 35px;
+    width: 25px;
+    background-color: rgb(90, 89, 89);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.dancer .legs::before {
+    border-right: 2px solid rgb(51, 51, 51);
+    right: 50%;
+}
+.dancer .legs::after {
+    border-left: 2px solid rgb(51, 51, 51);
+    left: 50%;
+}
+
+.dancer .bottom {
+    position: absolute;
+    z-index: 3;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: yellow;
+    width: 160px;
+    height: 45px;
+    border-radius: 50%;
+}
