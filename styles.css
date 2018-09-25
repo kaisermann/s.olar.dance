@@ -11,7 +11,7 @@
 .solar-dancer {
     position: relative;
     width: 265px;
-    height: 353px;
+    height: 311px;
 }
 .solar-dancer::before {
     content: '';
@@ -46,11 +46,11 @@
     width: 120px;
     height: 0;
     background-color: transparent;
-    border-bottom: 120px solid rgb(21, 124, 119);
-    border-left: 40px solid transparent;
-    border-right: 40px solid transparent;
-    border-bottom-left-radius: 40%;
-    border-bottom-right-radius: 40%;
+    border-bottom: 100px solid rgb(21, 124, 119);
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom-left-radius: 30%;
+    border-bottom-right-radius: 30%;
 }
 
 .solar-dancer .base::after {
@@ -60,30 +60,41 @@
     left: 50%;
     transform: translateX(-50%);
     display: block;
-    width: 110px;
+    width: 115px;
     height: 0;
     background-color: transparent;
-    border-bottom: 110px solid lightseagreen;
-    border-left: 40px solid transparent;
-    border-right: 40px solid transparent;
-    border-bottom-left-radius: 40%;
-    border-bottom-right-radius: 40%;
+    border-bottom: 80px solid lightseagreen;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-bottom-left-radius: 30%;
+    border-bottom-right-radius: 30%;
     z-index: 0;
 }
 
 .cells {
     position: absolute;
-    bottom: 40px;
+    bottom: 22px;
     left: 50%;
     transform: translateX(-50%);
-    width: 80px;
-    height: 0;
-    border-bottom: 20px solid darkslategray;
-    border-left: 4px solid transparent;
-    border-right: 4px solid transparent;
+    width: 120px;
+    height: 40px;
+    background-color: rgb(42, 170, 164);
+    z-index: 1;
+    border-radius: 15px;
+}
+.cells::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform-origin: 50%;
+    transform: translateX(-50%) rotateX(45deg);
+    width: 100px;
+    height: 20px;
+    background-color: darkslategray;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
-    z-index: 1;
 }
 
 .dancer {
