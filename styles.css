@@ -1,3 +1,10 @@
+:root {
+    --base-front: lightseagreen;
+    --base-back: rgb(21, 124, 119);
+    --cell-back: rgb(42, 170, 164);
+    --cell: #28241A;
+    --cell-shadow: rgb(6, 49, 47);
+}
 
 
 .container {
@@ -46,7 +53,7 @@
     width: 120px;
     height: 0;
     background-color: transparent;
-    border-bottom: 100px solid rgb(21, 124, 119);
+    border-bottom: 100px solid var(--base-back);
     border-left: 30px solid transparent;
     border-right: 30px solid transparent;
     border-bottom-left-radius: 30%;
@@ -63,7 +70,7 @@
     width: 115px;
     height: 0;
     background-color: transparent;
-    border-bottom: 80px solid lightseagreen;
+    border-bottom: 80px solid var(--base-front);
     border-left: 30px solid transparent;
     border-right: 30px solid transparent;
     border-bottom-left-radius: 30%;
@@ -75,10 +82,10 @@
     position: absolute;
     bottom: 22px;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-50%) rotateX(30deg);
     width: 120px;
     height: 40px;
-    background-color: rgb(42, 170, 164);
+    background-color: var(--cell-back);
     z-index: 1;
     border-radius: 15px;
 }
@@ -89,12 +96,13 @@
     bottom: 10px;
     left: 50%;
     transform-origin: 50%;
-    transform: translateX(-50%) rotateX(45deg);
+    transform: translateX(-50%) rotateX(-30deg);
     width: 100px;
     height: 20px;
-    background-color: darkslategray;
+    background-color: var(--cell);
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
+    box-shadow: -1px -1px 1px var(--cell-shadow), 1px -1px 1px var(--cell-shadow);
 }
 
 .dancer {
