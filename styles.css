@@ -1,9 +1,11 @@
 :root {
     --base-front: lightseagreen;
     --base-back: rgb(21, 124, 119);
-    --cell-back: rgb(42, 170, 164);
+    --cell-back: rgb(33, 153, 147);
     --cell: #28241A;
     --cell-shadow: rgb(6, 49, 47);
+    --bottom: yellow;
+    --bottom-shadow: rgb(173, 173, 0);
 }
 
 
@@ -33,7 +35,7 @@
     background-size: cover;
     background-position: center;
 }
-.solar-dancer .base {
+.base {
     width: 170px;
     height: 120px;
     position: absolute;
@@ -43,7 +45,7 @@
     left: 50%;
     transform: translateX(-50%);
 }
-.solar-dancer .base::before {
+.base::before {
     content: '';
     position: absolute;
     bottom: 0;
@@ -59,8 +61,7 @@
     border-bottom-left-radius: 30%;
     border-bottom-right-radius: 30%;
 }
-
-.solar-dancer .base::after {
+.base::after {
     content: '';
     position: absolute;
     bottom: 0px;
@@ -80,11 +81,11 @@
 
 .cells {
     position: absolute;
-    bottom: 22px;
+    bottom: 15px;
     left: 50%;
     transform: translateX(-50%) rotateX(30deg);
     width: 120px;
-    height: 40px;
+    height: 50px;
     background-color: var(--cell-back);
     z-index: 1;
     border-radius: 15px;
@@ -98,7 +99,7 @@
     transform-origin: 50%;
     transform: translateX(-50%) rotateX(-30deg);
     width: 100px;
-    height: 20px;
+    height: 30px;
     background-color: var(--cell);
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
@@ -116,7 +117,7 @@
     animation: shake-bottom 1s linear infinite;
 }
 
-.dancer .head {
+.head {
     position: absolute;
     z-index: 6;
     bottom: 95px;
@@ -296,7 +297,7 @@
     display: block;
     position: absolute;
     z-index: 4;
-    bottom: 60px;
+    bottom: 90px;
     width: 20px;
     height: 50px;
     background-color: rgb(97, 96, 96);
@@ -416,11 +417,11 @@
     z-index: 3;
     bottom: 0;
     left: -30px;
-    background-color: yellow;
+    background-color: var(--bottom);
     width: 160px;
     height: 45px;
     border-radius: 50%;
-    box-shadow: 0px 3px rgb(173, 173, 0), 0 3px 1px .5px #000;
+    box-shadow: 0px 3px var(--bottom-shadow), 0 3px 1px .5px #000;
 }
 
 @keyframes shake-bottom {
@@ -436,4 +437,199 @@
     100% {
         transform: translateX(0)
     }
+}
+
+/** Penguin */
+.penguin {
+    --base-back: rgb(107, 1, 1);
+    --base-front: rgb(216, 19, 19);
+    --cell-back: rgb(189, 32, 32);
+    --bottom: #A3DCF4;
+    --bottom-shadow: rgb(132, 186, 209);
+}
+
+.penguin .bottom {
+    left: -10px;
+    width: 120px;
+}
+
+.penguin .legs::before,
+.penguin .legs::after {
+    bottom: 0;
+    height: 20px;
+    width: 28px;
+    background-color: #DCB704;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+.penguin .legs::before {
+    border-right: 2px solid rgb(92, 77, 0);
+    right: 50%;
+}
+.penguin .legs::after {
+    border-right: 2px solid rgb(92, 77, 0);
+    left: 50%;
+}
+
+.penguin .torso {
+    bottom: 10px;
+    height: 100px;
+    animation: shake-torso 1s .2s linear infinite;
+}
+.penguin .torso::before {
+    height: 100px;
+    border-bottom: none;
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    background-color: #1f2228;
+}
+.penguin .torso::after {
+    bottom: 15px;
+    width: 40px;
+    height: 60px;
+    filter: none;
+}
+
+.penguin .arms::before,
+.penguin .arms::after {
+    bottom: 70px;
+    z-index: 7;
+    width: 3px;
+    height: 0;
+    background: none;
+    border-radius: 0;
+    border-top: 30px solid #CAA686;
+    border-bottom: 40px solid rgb(47, 51, 63);
+    border-left: 16px solid transparent;
+    border-right: 16px solid transparent;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+}
+.penguin .arms::before {
+    right: 65%;
+    animation: shake-arm-left 1s .5s linear infinite;
+}
+.penguin .arms::after {
+    left: 70%;
+    animation: shake-arm-left 1s .2s linear infinite;
+}
+
+
+.penguin .head {
+    bottom: 85px;
+    left: -5px;
+    width: 100px;
+    height: 80px;
+    background-color: #26292F;
+    box-shadow: 0 2px rgb(55, 56, 59);
+    animation: shake-head 1s .3s linear infinite;
+}
+
+.penguin .mask {
+    position: absolute;
+    z-index: 6;
+    bottom: 5px;
+    left: 50%;
+    width: 80px;
+    height: 60px;
+    transform: translateX(-50%);
+    background-color: #fff;
+    border-radius: 50%;
+}
+.penguin .mask::before,
+.penguin .mask::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 5px;
+    width: 55px;
+    height: 60px;
+    border-radius: 45%;
+    background-color: #fff;
+}
+.penguin .mask::before {
+    transform: translateX(0px) rotateZ(-30deg);
+}
+.penguin .mask::after {
+    transform: translateX(25px) rotateZ(30deg);
+}
+
+.penguin .bill::before,
+.penguin .bill::after {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 7;
+    bottom: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 0;
+    width: 0;
+    border-top: 24px solid #F7CE10;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-radius: 30%;
+}
+
+.penguin .bill::before {
+    bottom: -4px;
+    border-top-color: rgb(179, 148, 11);
+}
+
+.penguin .eyes {
+    position: relative;
+    top: 15px;
+    left: 15px;
+    z-index: 7;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    background: #000;
+    box-shadow: 34px 0 #000;
+}
+
+.penguin .eyes::before,
+.penguin .eyes::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 3px;
+    left: 5px;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background-color: #fff;
+    animation: penguin-eyes 3s linear infinite;
+}
+.penguin .eyes::after {
+    left: 39px;
+    border-radius: 50%;
+}
+@keyframes penguin-eyes {
+    0% {
+        transform: translateX(0px);
+    }
+    33% {
+        transform: translateX(-2px);
+    }
+    66% {
+        transform: translateX(2px);
+    }
+    100%{
+        transform: translateX(0px);
+    }
+}
+
+.penguin .hat {
+    position: absolute;
+    z-index: 9;
+    top: -22px;
+    left: 25px;
+    width: 0;
+    height: 0;
+    border-bottom: 30px solid #C4261D;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-radius: 50%;
+    transform: rotateZ(-6deg);
 }
