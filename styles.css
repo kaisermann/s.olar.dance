@@ -14,7 +14,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 100%;
     width: 100vw;
     background-image: url(./table.jpg);
     background-size: cover;
@@ -49,6 +49,12 @@
     transition: .3s ease;
     outline: none;
     user-select: none;
+}
+
+@media(max-width: 480px) {
+    .cordinha {
+        right: 40px;
+    }
 }
 
 .cordinha:hover {
@@ -109,7 +115,7 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 39vh;
+    height: 39%;
     overflow: hidden;
 }
 .cat {
