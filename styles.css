@@ -31,12 +31,28 @@
     width: 100%;
     height: 100%;
     background-color: #000;
-    opacity: .98;
+    opacity: .97;
     transition: 1s ease;
 }
 
 .puft:checked ~ .surpresinha::before {
     opacity: 0;
+}
+
+.puft:not(:checked) ~ * .dancer,
+.puft:not(:checked) ~ * .head,
+.puft:not(:checked) ~ * .face::after ,
+.puft:not(:checked) ~ * .arms::before,
+.puft:not(:checked) ~ * .arms::after,
+.puft:not(:checked) ~ * .torso,
+.puft:not(:checked) ~ * .penguin .dancer,
+.puft:not(:checked) ~ * .penguin .torso,
+.puft:not(:checked) ~ * .penguin .arms::before,
+.puft:not(:checked) ~ * .penguin .arms::after,
+.puft:not(:checked) ~ * .penguin .head,
+.puft:not(:checked) ~ * .penguin .eyes::before,
+.puft:not(:checked) ~ * .penguin .eyes::after {
+    animation: none !important;
 }
 
 .cordinha {
@@ -680,6 +696,7 @@
 }
 .penguin .arms::after {
     left: 70%;
+    transform: rotateZ(-120deg);
     animation: shake-arm-left 1s .2s linear infinite;
 }
 
